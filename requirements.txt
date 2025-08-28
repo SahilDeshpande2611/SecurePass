@@ -1,0 +1,9 @@
+fastapi==0.115.4
+uvicorn==0.32.0
+sqlalchemy==2.0.36
+python-multipart==0.0.12
+passlib[bcrypt]==1.7.4
+bcrypt==3.2.2  # Pinned to compatible version
+python-jose[cryptography]==3.3.0
+opencv-python==4.10.0.84
+numpy==2.1.2

@@ -1,0 +1,58 @@
+SECURE_PASS_BACKEND/
+├── app/                          # Core application package
+│   ├── __init__.py
+│   ├── api/                      # FastAPI route handlers
+│   │   ├── __init__.py
+│   │   ├── v1/                   # API versioning
+│   │   │   ├── __init__.py
+│   │   │   ├── endpoints/
+│   │   │   │   ├── __init__.py
+│   │   │   │   ├── detection.py  # YOLOv8 detection endpoints
+│   │   │   │   ├── ocr.py        # PaddleOCR endpoints
+│   │   │   │   └── verify.py     # Plate verification endpoints
+│   ├── core/                     # Application configurations and utilities
+│   │   ├── __init__.py
+│   │   ├── config.py             # Settings and environment variables
+│   │   ├── database.py           # Database connection and session management
+│   │   └── security.py           # Security-related utilities
+│   ├── models/                   # SQLAlchemy models
+│   │   ├── __init__.py
+│   │   ├── access_log.py         # Access log model
+│   │   └── authorized_vehicle.py # Authorized vehicle model
+│   ├── schemas/                  # Pydantic schemas for request/response
+│   │   ├── __init__.py
+│   │   ├── detection.py
+│   │   ├── ocr.py
+│   │   └── verify.py
+│   ├── services/                 # Business logic and services
+│   │   ├── __init__.py
+│   │   ├── detection_service.py  # YOLOv8 detection logic
+│   │   ├── ocr_service.py        # PaddleOCR processing logic
+│   │   └── verification_service.py # Plate verification logic
+│   └── utils/                    # Utility functions
+│       ├── __init__.py
+│       ├── image_processing.py   # Image preprocessing utilities
+│       └── text_processing.py    # Text cleaning and formatting utilities
+├── data/                         # Dataset and related files
+│   ├── custom_dataset/
+│   │   ├── images/               # Training and validation images
+│   │   └── labels/               # Corresponding labels
+│   └── authorized_vehicles.csv   # CSV of authorized license plates
+├── models/                       # Pretrained and custom models
+│   ├── yolov8/
+│   │   └── best.pt               # Trained YOLOv8 model weights
+│   └── paddleocr/
+│       └── inference/            # PaddleOCR inference models
+├── scripts/                      # Utility and setup scripts
+│   ├── import_authorized_vehicles.py # Script to import authorized vehicles into the database
+│   └── train_custom_yolov8.py    # Script to train YOLOv8 model
+├── tests/                        # Test cases
+│   ├── __init__.py
+│   ├── test_detection.py
+│   ├── test_ocr.py
+│   └── test_verification.py
+├── main.py                       # FastAPI application entry point
+├── requirements.txt              # Python dependencies
+├── .env                          # Environment variables
+├── Dockerfile                    # Docker configuration
+└── README.md                     # Project documentation

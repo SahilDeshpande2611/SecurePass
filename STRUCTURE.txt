@@ -1,0 +1,37 @@
+SECURE_PASS_BACKEND/
+├── app/
+│   ├── __init__.py
+│   ├── main.py                   # FastAPI application entry point
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── endpoints/
+│   │   │   ├── __init__.py
+│   │   │   ├── detection.py      # YOLOv5 detection endpoints
+│   │   │   ├── ocr.py            # OCR endpoints for text extraction
+│   │   │   ├── verification.py   # Endpoints for number plate verification
+│   │   │   └── logs.py           # Endpoints for logging access events
+│   │   └── dependencies.py       # Shared dependencies (e.g., DB sessions, model loaders)
+│   ├── core/
+│   │   ├── __init__.py
+│   │   ├── config.py             # Global configuration (paths, API settings, etc.)
+│   │   ├── database.py           # Database connection & session management (SQLAlchemy)
+│   │   └── models.py             # SQLAlchemy and Pydantic models
+│   └── utils/
+│       ├── __init__.py
+│       ├── ocr_utils.py          # Helper functions for OCR processing (using EasyOCR)
+│       └── detection_utils.py    # Helper functions for YOLOv5 detection tasks
+├── data/
+│   ├── raw/                      # Original PNG files (downloaded from Kaggle)
+│   ├── cleaned/                  # PNG files that pass OCR cleaning
+│   └── trash/                    # PNG files trashed after failing OCR cleaning
+├── models/
+│   ├── yolo/                     # YOLOv5 model weights, configs, etc.
+│   ├── ocr/                      # OCR configuration files (if needed)
+│   └── checkpoints/              # Training checkpoints & logs
+├── scripts/
+│   ├── clean_database.py         # Script to clean PNG files via OCR (with retry logic)
+│   ├── train_yolo.py             # Script to train/fine-tune the YOLOv5 model
+│   ├── train_ocr.py              # Script to test/fine-tune the OCR model
+│   └── additional_utils.py       # Additional utility scripts
+├── requirements.txt              # Python dependencies list
+└── README.md                     # Project overview and documentation
