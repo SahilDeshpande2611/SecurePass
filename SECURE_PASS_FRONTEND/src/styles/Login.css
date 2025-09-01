@@ -1,0 +1,154 @@
+/* Container for the entire login page */
+.login-container {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar/Header */
+.login-sidebar {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 16rem;
+  background-color: #1a2a44; /* Darker shade for sidebar */
+  padding: 1.5rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+  z-index: 20;
+}
+
+.login-sidebar.open {
+  transform: translateX(0);
+}
+
+.login-sidebar.sticky {
+  position: sticky;
+  height: 100vh;
+  transform: translateX(0);
+}
+
+.login-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.login-sidebar-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: white;
+}
+
+.login-sidebar-close-btn {
+  color: #a0a8b7;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+.login-sidebar-close-btn:hover {
+  color: #00d9a6;
+}
+
+.login-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-sidebar-link {
+  display: flex;
+  align-items: center;
+  color: white;
+  text-decoration: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.login-sidebar-link:hover {
+  color: #00d9a6;
+}
+
+.login-sidebar-icon {
+  margin-right: 0.5rem;
+}
+
+/* Mobile Sidebar Toggle Button */
+.login-toggle-btn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 30;
+  padding: 0.5rem;
+  background-color: #1a2a44;
+  border-radius: 5px;
+  border: 1px solid #00d9a6;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
+
+/* Main Content */
+.login-main-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Right Centre Container */
+.login-card-container {
+  max-width: 28rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .login-card-container {
+    margin-left: auto;
+    margin-right: 4rem; /* Right centre offset */
+  }
+}
+
+.login-card {
+  padding: 2rem;
+}
+
+.login-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.login-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-link-container {
+  margin-top: 1rem;
+  text-align: center;
+  color: #a0a8b7;
+}
+
+.register-link {
+  color: #00d9a6;
+  text-decoration: none;
+}
+
+.register-link:hover {
+  color: #00c096;
+}

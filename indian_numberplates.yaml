@@ -1,8 +1,0 @@
-# indian_numberplates.yaml
-
-train: C:/Users/PRATIK/SECURE_PASS_BACKEND/data/custom_dataset/images/train
-val: C:/Users/PRATIK/SECURE_PASS_BACKEND/data/custom_dataset/images/val
-
-nc: 1  # number of classes
-
-names: ['number_plate']

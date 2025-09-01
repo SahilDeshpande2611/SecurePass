@@ -1,0 +1,23 @@
+/* Import global styles */
+@import './styles/globals.css';
+
+/* Container for centered layout with right offset on larger screens */
+.container {
+  max-width: 80rem; /* Equivalent to max-w-7xl (1280px) */
+  margin: 0 auto;
+  padding: 1rem; /* Base padding (equivalent to px-4) */
+}
+
+@media (min-width: 640px) {
+  .container {
+    padding: 1.5rem; /* Equivalent to sm:px-6 */
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    padding: 2rem; /* Equivalent to lg:px-8 */
+    margin-left: auto;
+    margin-right: 4rem; /* Slight right offset for "right centre" */
+  }
+}

@@ -1,0 +1,141 @@
+/* Reset default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #031834;
+  color: white;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* Background Grid Effect */
+body:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(to right, rgba(9, 41, 77, 0.2) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(9, 41, 77, 0.2) 1px, transparent 1px);
+  background-size: 50px 50px;
+  z-index: -1;
+}
+
+/* Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+/* Common button styles */
+.btn-primary {
+  background-color: #00d9a6;
+  color: #031834;
+  padding: 12px 25px;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.btn-primary:hover {
+  background-color: #00c096;
+}
+
+.btn-primary:disabled {
+  background-color: #4b5563;
+  cursor: not-allowed;
+}
+
+/* Common input styles */
+.input-field {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid #4b5563;
+  border-radius: 5px;
+  background-color: #1a2a44;
+  color: white;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input-field:focus {
+  border-color: #00d9a6;
+}
+
+.input-field:disabled {
+  background-color: #4b5563;
+  cursor: not-allowed;
+}
+
+/* Common card styles */
+.card {
+  background-color: rgba(26, 42, 68, 0.9);
+  padding: 1.5rem;
+  border-radius: 5px;
+  border: 1px solid #00d9a6;
+}
+
+/* Error message */
+.error-message {
+  background-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+  padding: 1rem;
+  border-radius: 5px;
+  border: 1px solid #f87171;
+  margin-bottom: 1rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Spinner */
+.spinner {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 4px solid rgba(0, 217, 166, 0.3);
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-right: 0.5rem;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Authorized/Unauthorized text */
+.text-green {
+  color: #00d9a6;
+  font-weight: 500;
+}
+
+.text-red {
+  color: #f87171;
+  font-weight: 500;
+}
+
+/* Secondary text (e.g., for descriptions) */
+.text-secondary {
+  color: #a0a8b7;
+}
